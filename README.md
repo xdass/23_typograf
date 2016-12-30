@@ -1,4 +1,4 @@
-<There will be project description>
+{TODO. There will be project description}
 
 # Project goals
 
