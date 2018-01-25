@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
 
 @app.route('/')
@@ -10,8 +10,8 @@ def form():
 
 @app.route('/action', methods=['POST'])
 def action():
-    print(request.form)
-    return redirect('/')
+    print(request.json)
+    return jsonify(response='утка')
 
 if __name__ == "__main__":
     app.run()
