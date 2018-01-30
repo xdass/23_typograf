@@ -3,6 +3,7 @@
  */
 const form = document.getElementById('raw_text_form');
 const original_text = document.getElementById('original_text');
+const result_text = document.getElementById('result_text');
 
 form.addEventListener('submit', function(e) {
   e.preventDefault()
@@ -16,4 +17,8 @@ form.addEventListener('submit', function(e) {
       body: JSON.stringify({'text': original_text.value})
     })
     .then(response => response.json())
+    .then(json_data => {
+      result_text.disabled = false
+      result_text.textContent = json_data['beauty_text']
+    })
 });

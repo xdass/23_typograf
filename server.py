@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from typograf import beautify_text
+from werkzeug.utils import unescape
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
@@ -10,8 +12,9 @@ def form():
 
 @app.route('/action', methods=['POST'])
 def action():
-    print(request.json)
-    return jsonify(response='утка')
+    response = request.json
+    text = beautify_text(response['text'])
+    return jsonify(beauty_text=unescape(text))
 
 if __name__ == "__main__":
     app.run()
