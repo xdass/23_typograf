@@ -11,6 +11,7 @@ actions = [
     (r'([^-]\b[а-яА-Я]{1,2}\b)\s+(\w+)', r'\1&nbsp;\2')  # connect conjunctions and any words by non-breaking space
 ]
 
+
 def beautify_text(text):
     for expr, replace in actions:
         text = re.sub(expr, replace, text, flags=re.I)
