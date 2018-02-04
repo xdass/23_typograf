@@ -27,6 +27,9 @@
     </nav>
 
     <div class="container">
+        <div class="alert alert-danger" style="display: none;">
+            <strong>Danger!</strong>
+        </div>
       <form method="POST" id="raw_text_form">
         <div class="form-group">
           <textarea name="text" class="form-control" rows="10" placeholder="Введите текст" id="original_text" autofocus></textarea>
@@ -41,7 +44,7 @@
         </div>
       </form>
     </div><!-- /.container -->
-    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.min.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
